@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script>
+        function go_update() {
+            location.href="/updateform/<%=row.num%>";
+        }
+        </script>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p><a href="/list">리스트</a></p>
+        <table width="600" border="1">
+            <tr>
+                <th>글번호</th>
+                <td><%=row.num%></td>
+            </tr>
+            <tr>
+                <th>날짜</th>
+                <td><%=row.regdate%></td>
+            </tr>
+            <tr>
+                <th>조회수</th>
+                <td><%=row.hit%></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><%=row.subject%></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><%=row.content%></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="수정" onclick="go_update()">
+                    <input type="button" value="삭제" onclick="go_delete()">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

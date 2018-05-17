@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+
+    <body>
+        <h1><%=title%></h1>
+        <p><a href="/writeform">글쓰기</a></p>
+        <table width="600" border="1">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+            <%  for(let i=0; i < rows.length; i++) {
+                    let row = rows[i];
+            %>
+                <tr>
+                    <td>
+                        <%=row.num%>
+                    </td>
+                    <td>
+                        <a href="/read/<%=row.num%>">
+                            <%=row.subject%>
+                        </a>
+                    </td>
+                    <td>
+                        <%=row.writer%>
+                    </td>
+                    <td>
+                        <%=row.regdate%>
+                    </td>
+                    <td>
+                        <%=row.hit%>
+                    </td>
+                </tr>
+            <%}%>
+        </table>
+    </body>
+</html>
